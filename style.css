@@ -1,0 +1,183 @@
+:root{
+    --animation-time: 150ms;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+}
+
+body > div {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background-color: hsl(216, 12%, 8%);
+}
+
+
+p {
+    color: hsl(217, 12%, 63%);
+    line-height: 24px;
+    font-size: 15px;
+}
+
+h3 {
+    color: white;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+
+@-webkit-keyframes flip-diagonal-1-bl {
+    0% {
+      -webkit-transform: rotate3d(1, 1, 0, 0deg);
+              transform: rotate3d(1, 1, 0, 0deg);
+    }
+    100% {
+      -webkit-transform: rotate3d(1, 1, 0, -90deg);
+              transform: rotate3d(1, 1, 0, -90deg);
+    }
+  }
+  @keyframes flip-diagonal-1-bl {
+    0% {
+      -webkit-transform: rotate3d(1, 1, 0, 0deg);
+              transform: rotate3d(1, 1, 0, 0deg);
+    }
+    100% {
+      -webkit-transform: rotate3d(1, 1, 0, -90deg);
+              transform: rotate3d(1, 1, 0, -90deg);
+    }
+  }
+
+
+
+#feedback {
+    width: 416px;
+    height: 416px;
+    background-color: #181f29;
+    border-radius: 30px;
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    row-gap: 31px;
+}
+
+#feedback #star {
+    width: 48px;
+    height: 48px;
+    background-color: hsl(213, 19%, 18%);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+#feedback #feedbackText {
+    display: flex;
+    flex-flow: column;
+    row-gap: 12px;
+}
+
+
+#feedback #rating {
+    display: flex;
+    column-gap: 22.8px;
+}
+
+#feedback #rating input {
+    width: 51px;
+    height: 51px;
+    font-weight: 700;
+    border-radius: 50%;
+    border: none;
+    color: hsl(216, 12%, 54%);
+    background-color: hsl(213, 19%, 18%);
+    transition: all 240ms linear;
+}
+
+#feedback #rating input:hover {
+    background-color: hsl(25, 97%, 53%);
+    color: white;
+}
+
+#feedback #rating .selected {
+    background-color: hsl(217, 12%, 63%);
+    color: white;
+}
+
+
+#feedback #submit {
+    width: 341px;
+    height: 45px;
+    border-radius: 32px;
+    border: none;
+    background-color: hsl(25, 97%, 53%);
+    color: white;
+    font-weight: 700;
+    transition: all 240ms linear;
+}
+
+#feedback #submit:hover {
+    background-color: white;
+    color: hsl(25, 97%, 53%);
+}
+
+
+
+#thankYou {
+    padding-top: 44px;
+    row-gap: 33px;
+    width: 416px;
+    height: 416px;
+    background-color: #181f29;
+    border-radius: 30px;
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 31px;
+}
+
+#thankYou #finalRating {
+    background-color: hsl(213, 19%, 18%);
+    height: 32px;
+    width: 194px;
+    border-radius: 32px;
+    display: grid;
+    place-items: center;
+}
+
+#thankYou #finalRating p {
+    color: hsl(25, 97%, 53%);
+}
+
+
+#thankYou #thanksText {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+#thankYou #thanksText * {
+    text-align: center;
+}
+
+.show {
+    animation: flip-diagonal-1-bl var(--animation-time) reverse ease-out;
+}
+
+.hide {
+    animation: flip-diagonal-1-bl var(--animation-time) forwards ease-out;
+}
